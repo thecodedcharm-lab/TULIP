@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOOMING TULIP 🌷</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom,  #d5d5fe, #dfdbfa, #ffdbce,#ffe2bc);
+            min-height: 100vh;
+        }
+
+        .heading {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .heading h1 {
+            font-size: 75px;
+            color: #c80078;
+            margin-bottom: 10px;
+        }
+
+        .heading p {
+            font-size: 32px;
+            color: #e1689e;
+        }
+        .garden {
+            padding: 0 12px;
+        }
+        .scene {
+            position: relative;
+            width: 40vw;
+            margin: 0 auto;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, .6);
+            border-radius: 28px;
+            background: rgba(255, 255, 255, .22);
+            box-shadow: 0 20px 50px rgba(163, 95, 123, .18);
+            height: 75vh;
+        }
+        .sky {
+            position: relative;
+            height: inherit;
+            background:
+                radial-gradient(ellipse 150px 35px at 80% 28%, rgba(255,255,255,.40), transparent 70%),
+                radial-gradient(ellipse 180px 35px at 14% 62%, rgba(255,255,255,.40), transparent 70%),
+                radial-gradient(ellipse 180px 35px at  15% 10%, rgba(255,255,255,.40),transparent 70%);
+        }
+
+        .plant {
+            position: absolute;
+            left: 50%;
+            bottom: 30px;
+            width: 0;
+            height: 0;
+            animation: sway 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes sway {
+            from { rotate: -1deg; }
+            to { rotate: 1deg; }
+        }
+
+        .soil {
+            position: absolute;
+            bottom: 300px;
+            z-index: 2;
+            width: 290px;
+            height: 105px;
+            margin-left: -135px;
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+            background:
+                radial-gradient(circle at 24% 46%, #cd8d6b 0 8px, transparent 9px),
+                radial-gradient(circle at 66% 38%, #cd8d6b 0 6px, transparent 7px),
+                radial-gradient(circle at 46% 62%, #c4825f 0 9px, transparent 10px),
+                radial-gradient(circle at 82% 66%, #bf7b5a 0 7px, transparent 8px),
+                linear-gradient(#b9765a, #8f5640);
+        }
+
+        .stem {
+            position: absolute;
+            left: -5px;
+            bottom: 300px;
+            width: 20px;
+            height: 450px;
+            border-radius: 5px;
+            background: linear-gradient(90deg, #5d7d44, #86a266 45%, #4c6b39);
+        }
+
+        .leaf {
+            position: absolute;
+            bottom: 8px;
+            filter: drop-shadow(0 5px 6px rgba(70, 90, 45, .25));
+            bottom: 400px;
+            z-index: 1;
+        }
+
+        .leaf.left {
+            left: -66px;
+            width: 66px;
+            height: 292px;
+            transform-origin: 100% 100%;
+            border-radius: 0 100% 0 100%;
+            background: linear-gradient(135deg, #93b06c, #6a8c4d 50%, #355f35);
+            rotate: -6deg;
+        }
+
+        .leaf.right {
+            left: 0;
+            width: 62px;
+            height: 278px;
+            transform-origin: 0 100%;
+            border-radius: 100% 0 100% 0;
+            background: linear-gradient(225deg, #93b06c, #6a8c4d 50%, #355f35);
+            rotate: 6deg;
+        }
+
+            .head {
+            position: absolute;
+            left: 0;
+            bottom: 200px;
+            width: 0;
+            height: 0;
+            filter: drop-shadow(0 6px 8px rgba(190, 70, 110, .18));
+        }
+
+        .petal {
+            position: absolute;
+            left: 0;
+            bottom: 520px;
+            width: 56px;
+            height: 120px;
+            margin-left: -28px;
+            transform-origin: 50% 100%;
+            border-radius: 50% 50% 46% 46% / 78% 78% 22% 22%;
+            background: linear-gradient(to top, #dc5878, #ee7f98 55%, #f7a9b6);
+            box-shadow: inset 0 -16px 22px rgba(210, 60, 100, .25), inset 0 0 0 1px rgba(255,255,255,.3);
+        }
+       .back-left {
+            width: 52px;
+            height: 114px;
+            margin-left: -26px;
+            background: linear-gradient(to top, #dc5878, #ee7f98, #f7a9b6);
+            animation: backLeft 6s ease-in-out forwards paused;
+        }
+
+        @keyframes backLeft {
+            to { transform: rotate(-30deg) scale(1.08, .94); }
+        }
+
+        .back-right {
+            width: 52px;
+            height: 114px;
+            margin-left: -26px;
+            background: linear-gradient(to top, #dc5878, #ee7f98, #f7a9b6);
+            animation: backRight 6s ease-in-out forwards paused;
+        }
+
+        @keyframes backRight {
+            to { transform: rotate(30deg) scale(1.08, .94); }
+        }
+
+        .back-center {
+            width: 58px;
+            height: 120px;
+            margin-left: -29px;
+            animation: backCenter 6s ease-in-out forwards paused;
+        }
+
+        @keyframes backCenter {
+            to { transform: scale(1.06, .96); }
+        }
+
+        .front-left, .front-right {
+            width: 54px;
+            height: 122px;
+            background: linear-gradient(to top, #f06f8c, #f78fa2 55%, #fcb9c0);
+        }
+
+        .front-left {
+            margin-left: -37px;
+            animation: frontLeft 6s ease-in-out forwards paused;
+        }
+
+        .front-right {
+            margin-left: -17px;
+            animation: frontRight 6s ease-in-out forwards paused;
+        }
+
+        @keyframes frontLeft {
+            to { transform: rotate(-55deg) scale(1.1, .92); }
+        }
+
+        @keyframes frontRight {
+            to { transform: rotate(55deg) scale(1.1, .92); }
+        }
+
+
+
+        .front-center {
+            width: 58px;
+            height: 118px;
+            margin-left: -29px;
+            background: linear-gradient(to top, #f4758f, #f9a0ae, #fdcfd2);
+            animation: frontCenter 6s ease-in-out forwards paused;
+        }
+
+        @keyframes frontCenter {
+            to { transform: translateY(4px) scale(1.18, .58); }
+        }
+
+        
+        .scene:hover .back-left,
+        .scene:hover .back-right,
+        .scene:hover .back-center,
+        .scene:hover .front-left,
+        .scene:hover .front-right,
+        .scene:hover .front-center {
+            animation-play-state: running;
+        }
+
+      
+        .hint {
+            width: max-content;
+            max-width: 90vw;
+            margin: 22px auto 40px;
+            padding: 10px 28px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .35);
+            color: #a8758c;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .restart-area {
+        text-align: center;
+        margin: 25px auto;
+    }
+
+    .restart {
+        padding: 14px 32px;
+        border: none;
+        border-radius: 30px;
+        background: linear-gradient(135deg, #e1689e, #c80078);
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(200, 0, 120, 0.2);
+        transition: 0.3s;
+    }
+
+    .restart:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(200, 0, 120, 0.3);
+    }
+
+    .restart:active {
+        transform: scale(0.95);
+    }
+
+ 
+        
+    
+    </style>
+</head>
+<body>
+    <header class="heading">
+        <h1>Blooming Tulip 🌷</h1>
+        <p>A simple CSS animation</p>
+    </header>
+    <main class= "garden">
+    <section class="scene" aria-label="A tulip that blooms when you hover over it">
+        <div class="sky">
+            <div class="plant">
+                    <div class="leaf left"></div>
+                    <div class="leaf right"></div>
+                    <div class="stem"></div>
+
+                    <div class="head">
+                        <div class="petal back-left"></div>
+                        <div class="petal back-right"></div>
+                        <div class="petal back-center"></div>
+                        <div class="center"></div>
+                        <div class="petal front-left"></div>
+                        <div class="petal front-right"></div>
+                        <div class="petal front-center"></div>
+                    </div>
+
+                    <div class="soil"></div>
+                  
+
+        </div>
+    <div class="restart-area">
+            <button class="restart" onclick="location.reload()">↻ Start Again</button>
+    </div>
+    </section>
+          <p class="hint">♥ Hover over the flower to see it bloom ♥</p>
+</main>
+</body>
+</html>
