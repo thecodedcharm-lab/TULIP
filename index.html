@@ -3,49 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLOOMING TULIP 🌷</title>
+    <title>Blooming Tulip 🌷</title>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+
     <style>
         body {
-            background: linear-gradient(to bottom,  #d5d5fe, #dfdbfa, #ffdbce,#ffe2bc);
+            margin: 0;
             min-height: 100vh;
+            font-family: 'Patrick Hand', cursive;
+            background: linear-gradient(to bottom, #d5d5fe, #dfdbfa, #ffdbce, #ffe2bc);
         }
 
-        .heading {
+        .title {
             text-align: center;
-            padding: 30px;
+            padding: 26px 20px 14px;
         }
 
-        .heading h1 {
-            font-size: 75px;
-            color: #c80078;
-            margin-bottom: 10px;
+        .title h1 {
+            margin: 0 0 6px;
+            color: #a35f7b;
+            font-size: 48px;
+            font-weight: normal;
         }
 
-        .heading p {
-            font-size: 32px;
-            color: #e1689e;
+        .title p {
+            margin: 0;
+            color: #a8758c;
+            font-size: 20px;
         }
+
         .garden {
             padding: 0 12px;
         }
+
         .scene {
             position: relative;
-            width: 40vw;
+            width: min(94vw, 420px);
             margin: 0 auto;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, .6);
             border-radius: 28px;
             background: rgba(255, 255, 255, .22);
             box-shadow: 0 20px 50px rgba(163, 95, 123, .18);
-            height: 75vh;
         }
+
         .sky {
             position: relative;
-            height: inherit;
+            height: 440px;
             background:
-                radial-gradient(ellipse 150px 35px at 80% 28%, rgba(255,255,255,.40), transparent 70%),
-                radial-gradient(ellipse 180px 35px at 14% 62%, rgba(255,255,255,.40), transparent 70%),
-                radial-gradient(ellipse 180px 35px at  15% 10%, rgba(255,255,255,.40),transparent 70%);
+                radial-gradient(ellipse 110px 18px at 80% 28%, rgba(255,255,255,.45), transparent 70%),
+                radial-gradient(ellipse 140px 20px at 14% 62%, rgba(255,255,255,.35), transparent 70%);
         }
 
         .plant {
@@ -64,11 +71,12 @@
 
         .soil {
             position: absolute;
-            bottom: 300px;
+            left: 50%;
+            bottom: -2px;
             z-index: 2;
-            width: 290px;
-            height: 105px;
-            margin-left: -135px;
+            width: 210px;
+            height: 50px;
+            margin-left: -105px;
             border-radius: 50% 50% 0 0 / 100% 100% 0 0;
             background:
                 radial-gradient(circle at 24% 46%, #cd8d6b 0 8px, transparent 9px),
@@ -81,9 +89,9 @@
         .stem {
             position: absolute;
             left: -5px;
-            bottom: 300px;
-            width: 20px;
-            height: 450px;
+            bottom: 0;
+            width: 10px;
+            height: 206px;
             border-radius: 5px;
             background: linear-gradient(90deg, #5d7d44, #86a266 45%, #4c6b39);
         }
@@ -92,31 +100,30 @@
             position: absolute;
             bottom: 8px;
             filter: drop-shadow(0 5px 6px rgba(70, 90, 45, .25));
-            bottom: 400px;
-            z-index: 1;
         }
 
         .leaf.left {
             left: -66px;
             width: 66px;
-            height: 292px;
+            height: 192px;
             transform-origin: 100% 100%;
             border-radius: 0 100% 0 100%;
-            background: linear-gradient(135deg, #93b06c, #6a8c4d 50%, #355f35);
+            background: linear-gradient(135deg, #93b06c, #6a8c4d 50%, #4d6f3c);
             rotate: -6deg;
         }
 
         .leaf.right {
             left: 0;
             width: 62px;
-            height: 278px;
+            height: 178px;
             transform-origin: 0 100%;
             border-radius: 100% 0 100% 0;
-            background: linear-gradient(225deg, #93b06c, #6a8c4d 50%, #355f35);
+            background: linear-gradient(225deg, #93b06c, #6a8c4d 50%, #4d6f3c);
             rotate: 6deg;
         }
 
-            .head {
+
+        .head {
             position: absolute;
             left: 0;
             bottom: 200px;
@@ -128,7 +135,7 @@
         .petal {
             position: absolute;
             left: 0;
-            bottom: 520px;
+            bottom: -8px;
             width: 56px;
             height: 120px;
             margin-left: -28px;
@@ -137,16 +144,15 @@
             background: linear-gradient(to top, #dc5878, #ee7f98 55%, #f7a9b6);
             box-shadow: inset 0 -16px 22px rgba(210, 60, 100, .25), inset 0 0 0 1px rgba(255,255,255,.3);
         }
-       .back-left {
+
+
+
+        .back-left {
             width: 52px;
             height: 114px;
             margin-left: -26px;
             background: linear-gradient(to top, #dc5878, #ee7f98, #f7a9b6);
             animation: backLeft 6s ease-in-out forwards paused;
-        }
-
-        @keyframes backLeft {
-            to { transform: rotate(-30deg) scale(1.08, .94); }
         }
 
         .back-right {
@@ -157,19 +163,11 @@
             animation: backRight 6s ease-in-out forwards paused;
         }
 
-        @keyframes backRight {
-            to { transform: rotate(30deg) scale(1.08, .94); }
-        }
-
         .back-center {
             width: 58px;
             height: 120px;
             margin-left: -29px;
             animation: backCenter 6s ease-in-out forwards paused;
-        }
-
-        @keyframes backCenter {
-            to { transform: scale(1.06, .96); }
         }
 
         .front-left, .front-right {
@@ -188,16 +186,6 @@
             animation: frontRight 6s ease-in-out forwards paused;
         }
 
-        @keyframes frontLeft {
-            to { transform: rotate(-55deg) scale(1.1, .92); }
-        }
-
-        @keyframes frontRight {
-            to { transform: rotate(55deg) scale(1.1, .92); }
-        }
-
-
-
         .front-center {
             width: 58px;
             height: 118px;
@@ -206,11 +194,6 @@
             animation: frontCenter 6s ease-in-out forwards paused;
         }
 
-        @keyframes frontCenter {
-            to { transform: translateY(4px) scale(1.18, .58); }
-        }
-
-        
         .scene:hover .back-left,
         .scene:hover .back-right,
         .scene:hover .back-center,
@@ -220,19 +203,140 @@
             animation-play-state: running;
         }
 
-      
-        .hint {
-            width: max-content;
-            max-width: 90vw;
-            margin: 22px auto 40px;
-            padding: 10px 28px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, .35);
-            color: #a8758c;
-            font-size: 18px;
-            text-align: center;
+        @keyframes backLeft {
+            to { transform: rotate(-30deg) scale(1.08, .94); }
         }
 
+        @keyframes backRight {
+            to { transform: rotate(30deg) scale(1.08, .94); }
+        }
+
+        @keyframes backCenter {
+            to { transform: scale(1.06, .96); }
+        }
+
+        @keyframes frontLeft {
+            to { transform: rotate(-55deg) scale(1.1, .92); }
+        }
+
+        @keyframes frontRight {
+            to { transform: rotate(55deg) scale(1.1, .92); }
+        }
+
+        @keyframes frontCenter {
+            to { transform: translateY(4px) scale(1.18, .58); }
+        }
+
+        .center {
+            position: absolute;
+            left: -8px;
+            bottom: -4px;
+            width: 16px;
+            height: 78px;
+            border-radius: 9px 9px 5px 5px;
+            background: linear-gradient(to top, #f08a24, #ffb92e 55%, #ffe08a);
+            box-shadow: 0 0 16px rgba(255, 185, 60, .65);
+            opacity: 0;
+            transform: scaleY(.35);
+            transform-origin: bottom;
+            animation: showCenter 6s ease-in-out forwards paused;
+        }
+
+        .center::before, .center::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            width: 8px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(to top, #b8643a, #7c3d28);
+        }
+
+        .center::before {
+            left: -15px;
+            rotate: -13deg;
+        }
+
+        .center::after {
+            right: -15px;
+            rotate: 13deg;
+        }
+
+        .scene:hover .center {
+            animation-play-state: running;
+        }
+
+        @keyframes showCenter {
+            55% { opacity: 0; transform: scaleY(.35); }
+            75%, 100% { opacity: 1; transform: scaleY(1); }
+        }
+
+        .spark {
+            position: absolute;
+            z-index: 3;
+            width: 14px;
+            height: 14px;
+            background: white;
+            clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+            opacity: 0;
+            animation: sparkle 2s ease-in-out infinite alternate paused;
+        }
+
+        .spark.one { left: 15%; top: 118px; }
+        .spark.two { left: 80%; top: 96px; width: 20px; height: 20px; }
+        .spark.three { left: 23%; top: 206px; }
+        .spark.four { left: 79%; top: 188px; }
+        .spark.five { left: 30%; top: 58px; width: 10px; height: 10px; }
+        .spark.six { left: 68%; top: 52px; width: 10px; height: 10px; }
+
+        .scene:hover .spark {
+            animation-play-state: running;
+        }
+
+        @keyframes sparkle {
+            0% { opacity: 0; transform: scale(.5); }
+            50% { opacity: 1; transform: scale(1.1); }
+            100% { opacity: 0; transform: scale(.5); }
+        }
+
+        .petal-fall {
+            position: absolute;
+            z-index: 3;
+            width: 26px;
+            height: 16px;
+            border-radius: 100% 0 100% 0;
+            background: linear-gradient(135deg, #fdc5cb, #f58ba1);
+            opacity: 0;
+        }
+
+        .fall-one { left: 78%; top: 84px; }
+        .fall-two { left: 14%; top: 222px; }
+        .fall-three { left: 80%; top: 236px; }
+        .fall-four { left: 20%; top: 320px; }
+
+        .scene:hover .petal-fall {
+            animation: fall 3s ease-out 4s forwards, float 4s ease-in-out 7s infinite alternate;
+        }
+
+        @keyframes fall {
+            from { opacity: 0; transform: translate(0, 0) rotate(0); }
+            to { opacity: 1; transform: translate(0, 0) rotate(100deg); }
+        }
+
+        @keyframes float {
+            from { transform: translateY(-5px) rotate(-10deg); }
+            to { transform: translate(3px, 9px) rotate(16deg); }
+        }
+
+        .caption {
+            height: 40px;
+            display: grid;
+            place-items: center;
+            color: #a35f7b;
+            font-size: 20px;
+        }
+        
+        
         .restart-area {
         text-align: center;
         margin: 25px auto;
@@ -259,21 +363,30 @@
     .restart:active {
         transform: scale(0.95);
     }
-
- 
-        
-    
+  
+        .hint {
+            width: max-content;
+            max-width: 90vw;
+            margin: 22px auto 40px;
+            padding: 10px 28px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .35);
+            color: #a8758c;
+            font-size: 18px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <header class="heading">
+    <header class="title">
         <h1>Blooming Tulip 🌷</h1>
         <p>A simple CSS animation</p>
     </header>
-    <main class= "garden">
-    <section class="scene" aria-label="A tulip that blooms when you hover over it">
-        <div class="sky">
-            <div class="plant">
+
+    <main class="garden">
+        <section class="scene" aria-label="A tulip that blooms when you hover over it">
+            <div class="sky">
+                <div class="plant">
                     <div class="leaf left"></div>
                     <div class="leaf right"></div>
                     <div class="stem"></div>
@@ -287,16 +400,29 @@
                         <div class="petal front-right"></div>
                         <div class="petal front-center"></div>
                     </div>
+                </div>
 
-                    <div class="soil"></div>
-                  
+                <div class="soil"></div>
+                <div class="spark one"></div>
+                <div class="spark two"></div>
+                <div class="spark three"></div>
+                <div class="spark four"></div>
+                <div class="spark five"></div>
+                <div class="spark six"></div>
 
-        </div>
-    <div class="restart-area">
-            <button class="restart" onclick="location.reload()">↻ Start Again</button>
-    </div>
-    </section>
-          <p class="hint">♥ Hover over the flower to see it bloom ♥</p>
-</main>
+                <div class="petal-fall fall-one"></div>
+                <div class="petal-fall fall-two"></div>
+                <div class="petal-fall fall-three"></div>
+                <div class="petal-fall fall-four"></div>
+            </div>
+
+            <div class="caption">Hover over the flower to watch it bloom</div>
+            <div class="restart-area">
+                <button class="restart" onclick="location.reload()">↻ Start Again</button>
+            </div>
+        </section>
+
+        <p class="hint">♥ Hover over the flower to see it bloom ♥</p>
+    </main>
 </body>
 </html>
